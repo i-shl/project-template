@@ -1,12 +1,13 @@
-import Vue from "vue";
-import Vuex from "vuex";
-Vue.use(Vuex);
+import { defineStore } from "pinia"
 
-const store = new Vuex.Store({
-  state: {},
-  getters: {},
-  mutations: {},
-  actions: {},
-});
-
-export default store;
+export const useCounterStore = defineStore('counter', {
+  state: () => ({ count: 0 }),
+  getters: {
+    double: (state) => state.count * 2,
+  },
+  actions: {
+    increment() {
+      this.count++
+    },
+  },
+})

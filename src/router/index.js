@@ -1,33 +1,40 @@
-import Vue from "vue";
-import VueRouter from "vue-router";
-Vue.use(VueRouter);
+import { createRouter, createWebHashHistory } from 'vue-router';
 
 const routes = [
   {
-    path: "/",
-    redirect: "/index",
+    path: '/',
+    redirect: '/ref',
   },
   {
-    path: "/login",
-    name: "Login",
-    component: () => import("../views/login/login.vue"),
-    meta: { title: "login" },
+    path: '/ref',
+    name: 'ref',
+    component: () => import('@/views/Ref.vue'),
   },
   {
-    path: "/index",
-    name: "Index",
-    component: () => import("../views/index/index.vue"),
-    meta: { title: "index" },
+    path: '/reactive',
+    name: 'reactive',
+    component: () => import('@/views/Reactive.vue'),
+  },
+  {
+    path: '/store',
+    name: 'store',
+    component: () => import('@/views/Store.vue'),
+  },
+  {
+    path: '/component',
+    name: 'component',
+    component: () => import('@/views/Component.vue'),
+  },
+  {
+    path: '/hook',
+    name: 'hook',
+    component: () => import('@/views/Hook.vue'),
   },
 ];
 
-const router = new VueRouter({
+const router = createRouter({
+  history: createWebHashHistory(),
   routes,
-});
-
-router.beforeEach((to, from, next) => {
-  document.title = to.meta.title; //动态改变浏览器标题
-  next();
 });
 
 export default router;

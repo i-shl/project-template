@@ -1,1 +1,1 @@
-# Vue2 Template
+# Vue3 Template
