@@ -1,40 +1,32 @@
-import { createRouter, createWebHashHistory } from 'vue-router';
+import { createRouter, createWebHashHistory } from "vue-router";
 
 const routes = [
   {
-    path: '/',
-    redirect: '/ref',
+    path: "/",
+    redirect: "/index",
   },
   {
-    path: '/ref',
-    name: 'ref',
-    component: () => import('@/views/Ref.vue'),
+    path: "/login",
+    name: "Login",
+    component: () => import("@/views/login/login.vue"),
+    meta: { title: "登录" },
   },
   {
-    path: '/reactive',
-    name: 'reactive',
-    component: () => import('@/views/Reactive.vue'),
-  },
-  {
-    path: '/store',
-    name: 'store',
-    component: () => import('@/views/Store.vue'),
-  },
-  {
-    path: '/component',
-    name: 'component',
-    component: () => import('@/views/Component.vue'),
-  },
-  {
-    path: '/hook',
-    name: 'hook',
-    component: () => import('@/views/Hook.vue'),
+    path: "/index",
+    name: "Index",
+    component: () => import("@/views/index/index.vue"),
+    meta: { title: "首页" },
   },
 ];
 
 const router = createRouter({
   history: createWebHashHistory(),
   routes,
+});
+
+router.beforeEach((to, from, next) => {
+  document.title = to.meta.title;
+  next();
 });
 
 export default router;

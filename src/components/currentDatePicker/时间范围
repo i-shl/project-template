@@ -1,0 +1,12 @@
+> 使用时间范围组件：
+
+```
+<CurrentDatePicker
+v-model:startDate="search.createTimek"
+v-model:endDate="search.createTimeend"
+></CurrentDatePicker>
+
+<script>
+import CurrentDatePicker from "......"
+</script>
+```
