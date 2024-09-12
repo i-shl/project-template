@@ -1,1 +1,1 @@
-# Uniapp Vue2 Template
+# Vitepress Template

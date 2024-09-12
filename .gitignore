@@ -1,0 +1,13 @@
+node_modules/
+docs/.vitepress/dist
+docs/.vitepress/cache
+yarn-debug.log*
+yarn-error.log*
+
+# Editor directories and files
+.vscode
+.idea
+
+package-lock.json
+pnpm-lock.yaml
+yarn.lock
