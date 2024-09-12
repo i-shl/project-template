@@ -1,1 +1,1 @@
-# Vitepress Template
+# Vue2 Template
